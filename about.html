@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Sachin Thakur</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="section-container">
+        <h1 class="fade-in">About Me</h1>
+
+        <!-- Scrolling paragraph container -->
+        <div class="scroll-container" id="scrollContainer">
+            <p class="scroll-text">
+                I am Sachin Thakur, a passionate and dedicated B.Tech Computer Science and Engineering (CSE) student specializing in Cybersecurity. 
+                With a strong interest in blockchain security, decentralized AI, and IoT security, I am continuously exploring innovative solutions. 
+                My expertise includes Rust, Motoko, and Next.js for secure decentralized applications (dApps) on ICP. 
+                Currently, I am working on blockchain-based land registry systems, AI-driven anomaly detection, and smart contract-based security automation. 
+                Beyond academics, I am highly enthusiastic about DeFi, NFT ecosystems, and Web3 security. 
+                I aim to contribute to the next generation of secure, decentralized applications by leveraging blockchain and AI. 
+                Let's connect and innovate together!
+            </p>
+        </div>
+
+        <ul class="fade-in">
+            <li><strong>Name:</strong> Sachin Thakur</li>
+            <li><strong>Age:</strong> <span id="age"></span></li>
+            <li><strong>Date of Birth:</strong> 2002/09/09</li>
+            <li><strong>Blood Group:</strong> B+</li>
+            <li><strong>Height:</strong> 5ft 6inch</li>
+            <li><strong>Weight:</strong> 50 kg</li>
+        </ul>
+
+        <a href="index.html" class="back-btn fade-in">Back to Home</a>
+    </div>
+
+    <script>
+        // Calculate age from DOB
+        function calculateAge(dob) {
+            const birthDate = new Date(dob);
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+        document.getElementById("age").textContent = calculateAge("2002-09-09");
+
+        // GSAP Animation for scrolling paragraph
+        let scrollAnim = gsap.fromTo(
+            ".scroll-text",
+            { opacity: 0, y: 50 }, // Start position
+            {
+                opacity: 1,
+                y: -200, // Moves text upwards
+                duration: 15, // Slow scrolling
+                ease: "power1.inOut",
+                repeat: -1, // Infinite loop
+                paused: false
+            }
+        );
+
+        // Pause scrolling on hover
+        document.getElementById("scrollContainer").addEventListener("mouseenter", () => {
+            scrollAnim.pause();
+        });
+
+        // Resume scrolling on mouse leave
+        document.getElementById("scrollContainer").addEventListener("mouseleave", () => {
+            scrollAnim.resume();
+        });
+
+        // GSAP fade-in effect for other elements
+        gsap.from(".fade-in", { opacity: 0, y: 50, duration: 1, stagger: 0.3 });
+    </script>
+
+    <style>
+        /* Scroll container */
+        .scroll-container {
+            width: 80%;
+            height: 150px; /* Adjust height */
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            margin: auto;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Scrolling text */
+        .scroll-text {
+            position: absolute;
+            width: 100%;
+            opacity: 0; /* Initially hidden */
+        }
+    </style>
+</body>
+</html>

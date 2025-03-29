@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sachin Thakur</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="projects-container">
+        <h1 class="fade-in">My Projects</h1>
+
+        <!-- Library Management System (C) -->
+        <div class="project-box fade-in">
+            <h2 class="highlight">Library Management System</h2>
+            <p>
+                A command-line based library system that allows users to add, delete, search, and borrow books. 
+                It features user authentication, file handling for persistent data storage, and an intuitive menu system.
+                Built using <strong>C</strong>.
+            </p>
+        </div>
+
+        <!-- Land Registry System (ICP) -->
+        <div class="project-box fade-in">
+            <h2 class="highlight">Blockchain-Based Land Registry System</h2>
+            <p>
+                A decentralized platform for secure land ownership registration. It uses blockchain to prevent fraud and 
+                ensures transparency in property transactions. Backend implemented with <strong>Rust Canisters</strong>, frontend in <strong>Next.js</strong>, 
+                and smart contracts deployed on the <strong>Internet Computer Protocol (ICP)</strong>.
+            </p>
+        </div>
+
+        <!-- AI Chatbot (AWS) -->
+        <div class="project-box fade-in">
+            <h2 class="highlight">AI Chatbot using AWS</h2>
+            <p>
+                An intelligent chatbot that interacts with users using **natural language processing (NLP)**. 
+                It provides real-time responses and is integrated with various AWS services for enhanced performance. 
+                Developed using <strong>AWS Lex</strong>, <strong>Lambda</strong>, and <strong>DynamoDB</strong>.
+            </p>
+        </div>
+
+        <a href="index.html" class="back-btn fade-in">Back to Home</a>
+    </div>
+
+    <script>
+        // GSAP Animation for smooth fade-in effect
+        gsap.from(".fade-in", { opacity: 0, y: 50, duration: 1, stagger: 0.3 });
+    </script>
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0e0e0e;
+            color: white;
+            text-align: center;
+        }
+
+        .projects-container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Highlighted Title */
+        .highlight {
+            color: #ffcc00;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        /* Project Box Styling */
+        .project-box {
+            background-color: #1a1a1a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Hover Effect */
+        .project-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff9900;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #ff6600;
+        }
+    </style>
+</body>
+</html>

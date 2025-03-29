@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sachin Thakur</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contact-container fade-in">
+        <h1>Contact Me</h1>
+        
+        <p>Email: <a href="mailto:youremail@example.com">amskt123@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/thakursachin34169" target="_blank">LinkedIn Profile</a></p>
+
+        <p>GitHub: <a href="#" target="_blank">Your GitHub</a></p>
+        
+        <h2>Send a Message</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Send">
+        </form>
+
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
+
+    <script>
+        // GSAP Animations
+        gsap.from(".contact-container", { duration: 1, opacity: 0, y: -20, ease: "power2.out" });
+
+        // Form Submit Event (Prevent Default for Demo)
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Message Sent Successfully!");
+        });
+    </script>
+</body>
+</html>

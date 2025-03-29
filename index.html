@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Thakur - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="fade-in">
+        <h1>Warm Welcome To My Portfolio</h1>
+        <p>B.Tech CSE | Cybersecurity</p>
+    </header>
+    
+    <nav class="fade-in">
+        <ul>
+            <li class="dropdown">
+                <a href="#">Know Me</a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="extra-curricular.html">Extra Curricular</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <img src="images/profile.jpg" alt="Sachin Thakur" class="profile-pic">
+        <h2 class="fade-in">Hi, I'm Sachin Thakur</h2>
+        <p class="fade-in">Passionate about Cybersecurity & Blockchain Innovation</p>
+    </section>
+
+    <script>
+        // Animate header and navigation
+        gsap.from("header", { duration: 1, opacity: 0, y: -30, ease: "power2.out" });
+        gsap.from("nav", { duration: 1, opacity: 0, y: -20, delay: 0.5, ease: "power2.out" });
+
+        // Animate hero section elements
+        gsap.from(".profile-pic", { duration: 1, opacity: 0, scale: 0.8, delay: 1, ease: "power2.out" });
+        gsap.from(".fade-in", { duration: 1, opacity: 0, stagger: 0.3, delay: 1.2 });
+
+        // Rotate profile image when hovering
+        document.querySelector(".profile-pic").addEventListener("mouseenter", function() {
+            gsap.to(".profile-pic", { rotationY: 360, duration: 1 });
+        });
+    </script>
+
+    <style>
+        /* Navbar Styles */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            padding: 10px 15px;
+            color: white;
+            background: #333;
+            border-radius: 5px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background: #444;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #333;
+            border-radius: 5px;
+            list-style: none;
+            padding: 0;
+            min-width: 150px;
+        }
+
+        .dropdown-menu li {
+            display: block;
+            margin: 0;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px;
+            display: block;
+            color: white;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #444;
+        }
+
+        /* Show dropdown on hover */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</body>
+</html>

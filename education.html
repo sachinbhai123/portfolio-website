@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Sachin Thakur</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background Image */
+        body {
+            background: url('images/lovely.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white; /* Ensures text is readable */
+            font-family: Arial, sans-serif;
+        }
+
+        .education-container {
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black for readability */
+            padding: 20px;
+            border-radius: 10px;
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .year-container {
+            margin-bottom: 20px;
+        }
+
+        .education-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="fade-in">Education</h1>
+
+    <div class="education-container fade-in">
+        <div class="year-container">
+            <h2>2026</h2>
+            <div class="education-item">
+                <h3>Lovely Professional University</h3>
+                <p><strong>Degree:</strong> Bachelor of Technology in Computer Science and Engineering</p>
+                <p><strong>Relevant Coursework:</strong> Data Structures and Algorithms, Operating Systems, Database Management Systems, Artificial Intelligence, Computer Networks, Software Engineering</p>
+            </div>
+        </div>
+
+        <div class="year-container">
+            <h2>2021</h2>
+            <div class="education-item">
+                <h3>Shikshadeep H.S.B (Nepal)</h3>
+                <p><strong>Qualification:</strong> Senior Secondary School Certificate (12th Grade)</p>
+                <p><strong>Percentage:</strong> 83.12%</p>
+                <p><strong>Location:</strong> Biratnagar, Nepal</p>
+                <p><strong>Key Subjects:</strong> Physics, Chemistry, Mathematics, Computer Science</p>
+            </div>
+        </div>
+
+        <div class="year-container">
+            <h2>2019</h2>
+            <div class="education-item">
+                <h3>Shikshadeep H.S.B (Nepal)</h3>
+                <p><strong>Qualification:</strong> Secondary School Certificate (10th Grade)</p>
+                <p><strong>Percentage:</strong> 85.5%</p>
+                <p><strong>Location:</strong> Biratnagar, Nepal</p>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
+
+    <script>
+        // GSAP Animation for Smooth UI
+        gsap.from(".education-container", { duration: 1, opacity: 0, y: -20, ease: "power2.out" });
+    </script>
+</body>
+</html>
